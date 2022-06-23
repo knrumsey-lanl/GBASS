@@ -63,12 +63,14 @@ gbass <- function(X, y,
                   Iw0 = rep(1, maxInt), Zw0 = rep(1, ncol(X)),
                   verbose=TRUE){
 
+  if(is.null(dim(X))) X <- matrix(X, ncol=1)
   if(max(X) > 1 | min(X) < 0) warning("Found values of X outside of (0, 1).")
   if(nrow(X) != length(y)) stop("nrow(X) and length(y) should match")
   N <- nrow(X)
   p <- ncol(X)
   if(p < maxInt){
     warning("maxInt cannot exceed ncol(X). Running with maxInt = ncol(X)")
+    maxInt <- ncol(X)
   }
   nkeep <- length(seq(nburn, nmcmc, by=thin))
   if(is.null(npart)) npart <- min(20, 0.1*N)

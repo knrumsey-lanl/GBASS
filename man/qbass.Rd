@@ -4,7 +4,14 @@
 \alias{qbass}
 \title{QBASS - Bayesian MARS with an asymmetric Laplace likelhood}
 \usage{
-qbass(X, y, q = 0.5, prop_sigma_v = 0.25, ...)
+qbass(
+  X,
+  y,
+  q = 0.5,
+  prop_sigma_v = 0.25,
+  w_prior = list(type = "GIG", p = 0, a = 0, b = 0, prop_sigma = 0.2),
+  ...
+)
 }
 \arguments{
 \item{X}{an Nxp matrix of predictor variables.}
@@ -14,6 +21,8 @@ qbass(X, y, q = 0.5, prop_sigma_v = 0.25, ...)
 \item{q}{quantile of interest. Default is 0.5 for median regression.}
 
 \item{prop_sigma_v}{proposal SD for the local variance factors}
+
+\item{w_prior}{prior for global variance factor. Default is Jeffreys prior}
 }
 \description{
 QBASS - Bayesian MARS with an asymmetric Laplace likelhood

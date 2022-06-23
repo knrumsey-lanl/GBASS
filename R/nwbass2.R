@@ -47,6 +47,7 @@
 #' @examples
 #' #not yet
 #'
+#'@export
 nwbass2 <- function(X, y,
                   w_prior=list(type="GIG", p=0, a=0, b=0, prop_sigma=0.2),
                   maxInt=3, maxBasis=1000, npart=NULL, nmcmc=10000, nburn=9001, thin=1,

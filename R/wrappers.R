@@ -54,17 +54,19 @@ bass_shoe <- hbass
 #' @param y an Nx1 matrix (or vector) of response values.
 #' @param q quantile of interest. Default is 0.5 for median regression.
 #' @param prop_sigma_v proposal SD for the local variance factors
+#' @param w_prior prior for global variance factor. Default is Jeffreys prior
 #'
 #' @details Performs quantile regression for quantile q. For many quantiles, consider running in parallel. Can be used to view Sobol decomposition as a function of quantile.
 #'
 #'
 #' @export
-qbass <- function(X, y, q=0.5, prop_sigma_v=0.25, ...){
+qbass <- function(X, y, q=0.5, prop_sigma_v=0.25,
+                  w_prior = list(type="GIG", p=0, a=0, b=0, prop_sigma=0.2), ...){
   v_prior <- list(type="GIG", p=1, a=2, b=0, prop_sigma=prop_sigma_v)
   scale <- 2/(q*(1-q))
   m_beta <- 1/q - 1/(1-q)
   s_beta <- 0
-  md=gbass(X, y, v_prior=v_prior, scale=scale, m_beta=m_beta, s_beta=s_beta, ...)
+  md=gbass(X, y, v_prior=v_prior, w_prior=w_prior, scale=scale, m_beta=m_beta, s_beta=s_beta, ...)
   md$q <- q
   class(md) <-  c("qbass", "gbass")
   return(md)
