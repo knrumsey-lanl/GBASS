@@ -1,4 +1,5 @@
-GBASS - Generalized Bayesian Additive Regression Splines
+# GBASS 
+## Generalized Bayesian Additive Regression Splines
 
 An R package for fitting BASS models with flexible likelihoods, including
 
