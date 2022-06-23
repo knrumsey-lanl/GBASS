@@ -5,7 +5,7 @@
 
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![](https://img.shields.io/badge/devel%20version-1.2.1-purple.svg)](https://github.com/knrumsey-lanl/GBASS)
+[![](https://img.shields.io/badge/devel%20version-1.0.1-purple.svg)](https://github.com/knrumsey-lanl/GBASS)
 
 GBASS (Generalized Bayesian Additive Spline Surface) is an R package for
 fitting [BASS](https://github.com/cran/BASS) models with flexible
@@ -20,8 +20,3 @@ To install the `GBASS` package, type
 # install.packages("devtools")
 devtools::install_github("knrumsey-lanl/GBASS")
 ```
-
-
-# Examples
-
-See the vignettes folder for some minimal examples of how to use the package. 
