@@ -57,8 +57,6 @@ bass_shoe <- hbass
 #'
 #' @details Performs quantile regression for quantile q. For many quantiles, consider running in parallel. Can be used to view Sobol decomposition as a function of quantile.
 #'
-#' @example
-#' #Not yet
 #'
 #' @export
 qbass <- function(X, y, q=0.5, prop_sigma_v=0.25, ...){

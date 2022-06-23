@@ -21,7 +21,7 @@ nwbass2(
   b_lambda = 1,
   m_beta = 0,
   s_beta = 0,
-  lag_beta = 9001,
+  lag_beta = 1001,
   m_gamma = 1,
   s_gamma = 0,
   vsig = 0.25,
